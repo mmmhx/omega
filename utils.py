@@ -11,7 +11,7 @@ class element:
     def __init__(self, k, cnt):
         self.k = k
         self.cnt = cnt
-        coef = np.array([[1, -1],[-1, 1]])
+        coef =  np.array([[1, -1],[-1, 1]])
         self.K = np.multiply(coef, k)
 
 def n_nodes(nodes):
@@ -23,7 +23,7 @@ def BUILD_K(elements, nnodes):
     for element in elements:
         for i in range(len(element.cnt)):
             for j in range(len(element.cnt)):
-                K[element.cnt[i] - 1, element.cnt[j] - 1] += element.K[i - 1,j - 1]
+                K[element.cnt[i] - 1, element.cnt[j] - 1] += element.K[i,j]
     return K
 
 def BUILD_F(nodes):
