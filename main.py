@@ -24,9 +24,9 @@ Beta = np.iinfo(np.int32).max
 Beta *= 50*Kg.diagonal().max()
 i = 0
 for node in nodes:
-    if len(node.f) == 0:
+    if node.f == False:
         Kg[i] += Beta
-        Fg[i] =  Beta * node.u
+        Fg[i] +=  Beta * node.u
     i += 1
 
 print(Kg)
