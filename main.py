@@ -23,6 +23,8 @@ Beta = np.iinfo(np.int64).max
 Beta *= 300000*Kg.diagonal().max()
 i = 0
 
+print(Kg)
+
 for node in nodes:
     if node.f == None:
         Kg[i] += Beta
